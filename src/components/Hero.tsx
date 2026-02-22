@@ -5,9 +5,9 @@ const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const jerseyImages = [
-    '2233.jpg',
-    '3311.jpg',
-    '3images.png'
+    'banner1.jpg',
+    'banner2.jpg',
+    'banner3.jpg'
   ];
 
   useEffect(() => {

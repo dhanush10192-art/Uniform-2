@@ -11,9 +11,9 @@ const WhatWeDo = () => {
           viewport={{ once: true }}
           className="text-center mb-8"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">What We Do</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">Sublimation Printing</h2>
           <p className="text-gray-600 max-w-3xl mx-auto">
-            A uniform is standardized clothing worn by a group to promote unity, identity, and professionalism. It ensures consistent appearance, supports functionality, encourages team spirit, and reflects shared values within organizations, schools, workplaces, or teams.
+            Sublimation printing is a state-of-the-art process that fuses ink directly into the fabric fibers. This technology allows for unlimited colors, intricate designs, and photographic quality prints that are breathable, extremely durable, and will never crack or peel.
           </p>
         </motion.div>
 

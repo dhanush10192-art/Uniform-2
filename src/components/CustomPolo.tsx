@@ -15,8 +15,8 @@ const CustomPolo = () => {
                     >
                         <div className="relative">
                             <img
-                                src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=compress&cs=tinysrgb&w=800"
-                                alt="Custom Polo T-shirts"
+                                src="/Gallery/SUBLIMATION SERVER/6.jpg"
+                                alt="Sublimation Custom Polo"
                                 className="w-full h-auto rounded-[2.5rem] shadow-2xl"
                             />
                             {/* Accent Background */}
@@ -33,11 +33,11 @@ const CustomPolo = () => {
                         className="w-full lg:w-1/2"
                     >
                         <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-8 leading-tight">
-                            Custom School Uniform 
+                            Premium Sublimation Prints
                         </h2>
                         <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
                             <p className="text-justify">
-                                A school uniform is a neat, standardized outfit worn by students to create a sense of discipline, equality, and school identity. Designed for comfort, durability, and a smart appearance, it helps students focus on learning while representing their school with pride
+                                Our premium sublimation printing process ensures that every design is embedded directly into the fabric, providing a permanent, high-resolution finish that will never crack, peel, or fade. Perfect for complex patterns and vibrant team colors on professional-grade performance fabrics.
                             </p>
                         </div>
                     </motion.div>

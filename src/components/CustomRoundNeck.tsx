@@ -15,7 +15,7 @@ const CustomRoundNeck = () => {
                         className="w-full lg:w-1/2 order-2 lg:order-1"
                     >
                         <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-8 leading-tight">
-                            Custom School Uniforms 
+                            Sublimation Print Design
                         </h2>
                         <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
                             <p className="text-justify font-bold">
@@ -34,8 +34,8 @@ const CustomRoundNeck = () => {
                     >
                         <div className="relative">
                             <img
-                                src="sccc.avif"
-                                alt="Custom Round Neck T-shirts"
+                                src="/Gallery/SUBLIMATION SERVER/5.jpg"
+                                alt="Sublimation Print Design"
                                 className="w-full h-auto rounded-[2.5rem] shadow-2xl"
                             />
                             {/* Accent Background */}

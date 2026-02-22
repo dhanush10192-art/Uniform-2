@@ -6,8 +6,8 @@ const About = () => {
           <div className="relative">
             <div className="rounded-lg overflow-hidden shadow-lg">
               <img
-                src="https://images.pexels.com/photos/1884584/pexels-photo-1884584.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="About"
+                src="/Gallery/SUBLIMATION SERVER/7.jpg"
+                alt="Sublimation Production"
                 className="w-full h-auto"
               />
             </div>
@@ -15,19 +15,19 @@ const About = () => {
 
           <div>
             <h2 className="text-4xl sm:text-5xl font-bold text-navy-dark mb-6">
-              About  Our Services
+              Sublimation Specialists
             </h2>
             <p className="text-lg text-gray-600 mb-6 leading-relaxed font-bold">
-              Fast Colour is a dedicated uniforms manufacturing company delivering high-quality, professional custom jerseys for football and cricket teams at every level. With over 11 years of specialized apparel experience, we have equipped hundreds of teams across India.
+              Fast Colour is a premier sublimation printing and uniform manufacturing company. We specialize in delivering high-quality, vibrant, and durable custom jerseys for sports teams, corporate events, and educational institutions across India.
             </p>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed font-bold">
-              Our commitment to excellence in Uniforms design and production has made us the preferred choice for amateur leagues, school teams, and professional franchises. We use premium breathable materials and advanced sublimation technology to ensure every Uniform is comfortable, durable, and looks professional on the field.
+              With over 11 years of experience, our commitment to using advanced sublimation technology ensures every garment features crisp detail and permanent colors that never fade. We use premium breathable materials to ensure performance and comfort on and off the field.
             </p>
 
             <div className="grid grid-cols-2 gap-8 mb-8">
               <div>
-                <div className="text-3xl font-bold text-uniform-secondary mb-2">100+</div>
-                <div className="text-gray-600">Uniforms Focus</div>
+                <div className="text-3xl font-bold text-uniform-secondary mb-2">500+</div>
+                <div className="text-gray-600">Designs Ready</div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-uniform-secondary mb-2">5000+</div>
