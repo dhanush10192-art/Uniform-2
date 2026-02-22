@@ -5,12 +5,12 @@ const Infrastructure = () => {
     {
       icon: Droplet,
       title: 'Sublimation Printers',
-      description: 'Professional sublimation printers for vibrant, detailed cricket jersey designs.'
+      description: 'Professional sublimation printers for vibrant, detailed and full-bleed designs.'
     },
     {
       icon: Thermometer,
       title: 'Heat Press Equipment',
-      description: 'Advanced heat presses for perfect sublimation transfer on cricket jerseys.'
+      description: 'Advanced heat presses for perfect dye transfer on various polyester fabrics.'
     },
     {
       icon: Zap,
@@ -20,7 +20,7 @@ const Infrastructure = () => {
     {
       icon: Radio,
       title: 'Quality Testing',
-      description: 'State-of-the-art testing equipment to ensure every jersey meets standards.'
+      description: 'State-of-the-art testing equipment to ensure every print meets our standards.'
     }
   ];
 
@@ -29,10 +29,10 @@ const Infrastructure = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-            Sports Jersey Facility
+            Sublimation Printing Facility
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Equipped with advanced sublimation technology for premium cricket jerseys
+            Equipped with advanced technology for high-definition, permanent sublimation prints
           </p>
         </div>
 
@@ -83,8 +83,8 @@ const Infrastructure = () => {
             <div className="relative">
               <div className="aspect-square rounded-lg overflow-hidden">
                 <img
-                  src="https://images.pexels.com/photos/4464482/pexels-photo-4464482.jpeg?auto=compress&cs=tinysrgb&w=800"
-                  alt="Facility"
+                  src="/Gallery/SUBLIMATION SERVER/8.jpg"
+                  alt="Sublimation Printing Facility"
                   className="w-full h-full object-cover"
                 />
               </div>

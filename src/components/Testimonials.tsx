@@ -6,24 +6,21 @@ const testimonials = [
     {
         id: 1,
         name: 'RATHI D',
-        role: 'School Administrator',
-        content: '"The school uniforms from Fast Colour are of top-notch quality. Our students find them very comfortable for all-day wear and the branding is perfect."',
+        content: '"The sublimation printing from Fast Colour are of top-notch quality. Our customer find them very comfortable for all-day wear and the branding is perfect."',
         rating: 5,
         avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=compress&cs=tinysrgb&w=150'
     },
     {
         id: 2,
         name: 'PRIYA M',
-        role: 'School Principal',
-        content: '"Consistently high quality for our school uniforms. Delivery is always on time and the prices are very competitive."',
+        content: '"Consistently high quality for our sublimation printing. Delivery is always on time and the prices are very competitive."',
         rating: 5,
         avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=compress&cs=tinysrgb&w=150'
     },
     {
         id: 3,
         name: 'DHANUSH R',
-        role: 'Physical Education Director',
-        content: '"The best decision for our school athletic wear and daily uniforms. The sublimation prints are vibrant, never fade, and handle daily washing exceptionally well."',
+        content: '"The best decision for our sublimation prints. The sublimation prints are vibrant, never fade, and handle daily washing exceptionally well."',
         rating: 5,
         avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=compress&cs=tinysrgb&w=150'
     }
