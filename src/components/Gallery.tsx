@@ -6,8 +6,6 @@ const Gallery = () => {
 
   const galleryItems = [
     { id: 101, title: 'Sublimation Design', image: '/Gallery/SUBLIMATION SERVER/1.jpg', alt: 'Sublimation Design' },
-    { id: 4, title: 'Girls Collection', image: '/004.jpg', alt: 'Girls Collection' },
-    { id: 7, title: 'Sports Uniform', image: '/007.jpg', alt: 'Sports Uniform' },
   ];
 
   return (

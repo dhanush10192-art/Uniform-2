@@ -5,20 +5,10 @@ const ShopByCategory = () => {
 
     const categories = [
         {
-            id: 1,
-            title: 'School Uniform',
-            image: '/school.png',
-        },
-        {
             id: 2,
             title: 'Sublimation',
             image: '/Gallery/SUBLIMATION SERVER/3.jpg',
-        },
-        {
-            id: 4,
-            title: 'Sports Uniforms',
-            image: '/999.png',
-        },
+        }
     ];
 
     return (

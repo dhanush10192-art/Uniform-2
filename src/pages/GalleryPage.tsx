@@ -13,71 +13,11 @@ type Product = {
 };
 
 // --- Real Gallery Image Data ---
-const boysImages = [
-    '/Gallery/BOYS/1.jpg', '/Gallery/BOYS/2.jpg', '/Gallery/BOYS/3.jpg',
-    '/Gallery/BOYS/4.jpg', '/Gallery/BOYS/5.jpg', '/Gallery/BOYS/6.jpg',
-    '/Gallery/BOYS/7.jpg', '/Gallery/BOYS/8.jpg', '/Gallery/BOYS/9.jpg',
-    '/Gallery/BOYS/10.jpg', '/Gallery/BOYS/11.jpg',
-    '/Gallery/BOYS/B1.jpg', '/Gallery/BOYS/B2.webp', '/Gallery/BOYS/B3.webp',
-    '/Gallery/BOYS/B4.jpg', '/Gallery/BOYS/B5.webp', '/Gallery/BOYS/B6.jpg',
-    '/Gallery/BOYS/B7.jpg', '/Gallery/BOYS/B8.webp', '/Gallery/BOYS/B9.jpg',
-    '/Gallery/BOYS/B10.jpg',
-];
-
-const girlsImages = [
-    '/Gallery/GIRLS/1.jpg', '/Gallery/GIRLS/2.jpg', '/Gallery/GIRLS/3.jpg',
-    '/Gallery/GIRLS/4.jpg', '/Gallery/GIRLS/5.jpg', '/Gallery/GIRLS/6.jpg',
-    '/Gallery/GIRLS/7.jpg', '/Gallery/GIRLS/8.jpg', '/Gallery/GIRLS/9.jpg',
-    '/Gallery/GIRLS/10.png',
-];
-
-const sportsImages = [
-    '/Gallery/SPORTS/S 1.jpg', '/Gallery/SPORTS/S 2.jpg', '/Gallery/SPORTS/S 3.jpg',
-    '/Gallery/SPORTS/S 4.jpg', '/Gallery/SPORTS/S 5.jpg', '/Gallery/SPORTS/S 6.jpg',
-    '/Gallery/SPORTS/S 7.jpg', '/Gallery/SPORTS/S 8.jpg', '/Gallery/SPORTS/S 9.jpg',
-    '/Gallery/SPORTS/S 10.jpg', '/Gallery/SPORTS/S 11.jpg', '/Gallery/SPORTS/S 12.webp',
-    '/Gallery/SPORTS/S 13.jpg', '/Gallery/SPORTS/S 14.jpg', '/Gallery/SPORTS/S 15.jpg',
-    '/Gallery/SPORTS/S 16.jpg', '/Gallery/SPORTS/S 17.jpg', '/Gallery/SPORTS/S 18.jpg',
-    '/Gallery/SPORTS/S 19.jpg', '/Gallery/SPORTS/S 20.jpg', '/Gallery/SPORTS/S 21.jpg',
-    '/Gallery/SPORTS/S 22.jpg', '/Gallery/SPORTS/S 23 .jpg', '/Gallery/SPORTS/S 24.jpg',
-    '/Gallery/SPORTS/S 25.jpg', '/Gallery/SPORTS/S 26.jpg', '/Gallery/SPORTS/S 27.jpg',
-    '/Gallery/SPORTS/S 28.jpg', '/Gallery/SPORTS/S 29.jpg', '/Gallery/SPORTS/S 30.jpg',
-    '/Gallery/SPORTS/S 31.jpg', '/Gallery/SPORTS/S 32.jpg', '/Gallery/SPORTS/S 33.jpg',
-    '/Gallery/SPORTS/S 34.jpg', '/Gallery/SPORTS/S 35.jpg', '/Gallery/SPORTS/S 36.jpg',
-    '/Gallery/SPORTS/S 37.jpg', '/Gallery/SPORTS/S 38.jpg', '/Gallery/SPORTS/S 39.jpg',
-    '/Gallery/SPORTS/S 40.jpg', '/Gallery/SPORTS/S 41.jpg', '/Gallery/SPORTS/S 42.jpg',
-    '/Gallery/SPORTS/S 43.jpg', '/Gallery/SPORTS/S 44.jpg', '/Gallery/SPORTS/S 45.jpg',
-    '/Gallery/SPORTS/S 46.jpg', '/Gallery/SPORTS/S 47.jpg', '/Gallery/SPORTS/S 48.jpg',
-    '/Gallery/SPORTS/S 49.jpg', '/Gallery/SPORTS/S 50.jpg', '/Gallery/SPORTS/S 51.jpg',
-    '/Gallery/SPORTS/S 52.webp', '/Gallery/SPORTS/S 53.webp', '/Gallery/SPORTS/S 54.webp',
-    '/Gallery/SPORTS/S 55.webp', '/Gallery/SPORTS/S 56.webp', '/Gallery/SPORTS/S 57.webp',
-    '/Gallery/SPORTS/S 58.webp', '/Gallery/SPORTS/S 59.webp', '/Gallery/SPORTS/S 60.webp',
-    '/Gallery/SPORTS/S 61.webp', '/Gallery/SPORTS/S 62.webp',
-];
-
 const sublimationImages = Array.from({ length: 40 }, (_, i) => `/Gallery/SUBLIMATION SERVER/${i + 1}.jpg`);
 
 const allProducts: Product[] = [
-    ...boysImages.map((image, i) => ({
-        id: i + 1,
-        category: 'Boys Collection',
-        title: `Boys Collection ${i + 1}`,
-        image,
-    })),
-    ...girlsImages.map((image, i) => ({
-        id: boysImages.length + i + 1,
-        category: 'Girls Collection',
-        title: `Girls Collection ${i + 1}`,
-        image,
-    })),
-    ...sportsImages.map((image, i) => ({
-        id: boysImages.length + girlsImages.length + i + 1,
-        category: 'Sports Uniform',
-        title: `Sports Uniform ${i + 1}`,
-        image,
-    })),
     ...sublimationImages.map((image, i) => ({
-        id: boysImages.length + girlsImages.length + sportsImages.length + i + 1,
+        id: i + 1,
         category: 'Sublimation Design',
         title: `Sublimation Design ${i + 1}`,
         image,
@@ -102,26 +42,20 @@ const ProductCard = ({ product }: { product: Product }) => {
 };
 
 const GalleryPage = () => {
-    const [activeCategory, setActiveCategory] = useState('Sublimation Design');
+    const [activeCategory] = useState('Sublimation Design');
     const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 12;
+    const itemsPerPage = 8;
 
-    const filteredProducts = allProducts.filter(p => p.category === activeCategory);
+    const filteredProducts = allProducts;
     const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
     const currentItems = filteredProducts.slice(indexOfFirstItem, indexOfLastItem);
 
-    const categories = ['Sublimation Design', 'Boys Collection', 'Girls Collection', 'Sports Uniform'];
 
     const paginate = (pageNumber: number) => {
         setCurrentPage(pageNumber);
         window.scrollTo({ top: 300, behavior: 'smooth' });
-    };
-
-    const handleCategoryChange = (category: string) => {
-        setActiveCategory(category);
-        setCurrentPage(1);
     };
 
     useEffect(() => {
@@ -143,21 +77,7 @@ const GalleryPage = () => {
                     </p>
 
                     {/* Category Tabs — horizontally scrollable on mobile */}
-                    <div className="flex overflow-x-auto md:flex-wrap md:justify-center gap-2 md:gap-4 pb-1 md:pb-0"
-                        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
-                        {categories.map((cat) => (
-                            <button
-                                key={cat}
-                                onClick={() => handleCategoryChange(cat)}
-                                className={`flex-shrink-0 px-5 py-2 rounded-full text-xs md:text-sm font-bold transition-all duration-300 ${activeCategory === cat
-                                    ? 'bg-gray-900 text-white shadow-lg scale-105'
-                                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                                    }`}
-                            >
-                                {cat}
-                            </button>
-                        ))}
-                    </div>
+                    {/* Category Tabs — Removed since only one category exists */}
                 </div>
             </div>
 
