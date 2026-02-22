@@ -1,8 +1,7 @@
 import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 
 const Footer = () => {
-  const quickLinks = ['Home', 'Services', 'Gallery', 'Infrastructure', 'Blog', 'About', 'Pricing'];
-  const services = ['Jersey Sublimation', 'T-Shirt Printing', 'Custom Sportswear', 'Bulk Team Orders'];
+  const quickLinks = ['Home', 'Gallery', 'Blog', 'About',];
   const socialLinks = [
     { icon: Facebook, href: 'https://www.facebook.com/p/Fastcolors-61566794944064/' },
     { icon: Twitter, href: '#' },
@@ -13,7 +12,7 @@ const Footer = () => {
   return (
     <footer className="bg-navy-dark text-gray-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           <div>
             <div className="flex items-center space-x-3 mb-6">
               <div className="w-10 h-10 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg flex items-center justify-center">
@@ -60,21 +59,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div>
-            <h3 className="text-white font-bold text-lg mb-6">Services</h3>
-            <ul className="space-y-3">
-              {services.map((service, index) => (
-                <li key={index}>
-                  <a
-                    href="#services"
-                    className="hover:text-blue-400 transition-colors duration-300"
-                  >
-                    {service}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
 
           <div>
             <h3 className="text-white font-bold text-lg mb-6">Contact</h3>

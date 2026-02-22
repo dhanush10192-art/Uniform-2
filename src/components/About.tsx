@@ -30,11 +30,11 @@ const About = () => {
                 <div className="text-gray-600">Uniforms Focus</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-uniform-secondary mb-2">50000+</div>
-                <div className="text-gray-600">1000+ Teams</div>
+                <div className="text-3xl font-bold text-uniform-secondary mb-2">5000+</div>
+                <div className="text-gray-600">Units Per Day</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-uniform-secondary mb-2">12 +</div>
+                <div className="text-3xl font-bold text-uniform-secondary mb-2">20 +</div>
                 <div className="text-gray-600">States Served</div>
               </div>
               <div>

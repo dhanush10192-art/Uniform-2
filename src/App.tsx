@@ -6,10 +6,12 @@ import Home from './pages/Home';
 import GalleryPage from './pages/GalleryPage';
 import BlogDetailPage from './pages/BlogDetailPage';
 import GalleryDetailPage from './pages/GalleryDetailPage';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <div className="min-h-screen">
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={
           <>

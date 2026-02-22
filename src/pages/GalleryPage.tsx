@@ -12,44 +12,83 @@ type Product = {
     image: string;
 };
 
-// --- Mock Data Generation (150 Items) ---
-const generateProducts = () => {
-    const products: Product[] = [];
-    const categories = ['Boys Collection', 'Girls Collection', 'Sports Uniform'];
-    const baseImages = ['/001.jpg', '/002.jpg', '/003.jpg', '/004.jpg', '/005.jpg', '/006.jpg', '/007.jpg', '/008.jpg', '/009.jpeg'];
+// --- Real Gallery Image Data ---
+const boysImages = [
+    '/Gallery/BOYS/1.jpg', '/Gallery/BOYS/2.jpg', '/Gallery/BOYS/3.jpg',
+    '/Gallery/BOYS/4.jpg', '/Gallery/BOYS/5.jpg', '/Gallery/BOYS/6.jpg',
+    '/Gallery/BOYS/7.jpg', '/Gallery/BOYS/8.jpg', '/Gallery/BOYS/9.jpg',
+    '/Gallery/BOYS/10.jpg', '/Gallery/BOYS/11.jpg',
+    '/Gallery/BOYS/B1.jpg', '/Gallery/BOYS/B2.webp', '/Gallery/BOYS/B3.webp',
+    '/Gallery/BOYS/B4.jpg', '/Gallery/BOYS/B5.webp', '/Gallery/BOYS/B6.jpg',
+    '/Gallery/BOYS/B7.jpg', '/Gallery/BOYS/B8.webp', '/Gallery/BOYS/B9.jpg',
+    '/Gallery/BOYS/B10.jpg',
+];
 
-    categories.forEach((category) => {
-        for (let i = 1; i <= 50; i++) {
-            products.push({
-                id: products.length + 1,
-                category,
-                title: `Gallery Image ${i}`,
-                image: baseImages[Math.floor(Math.random() * baseImages.length)]
-            });
-        }
-    });
-    return products;
-};
+const girlsImages = [
+    '/Gallery/GIRLS/1.jpg', '/Gallery/GIRLS/2.jpg', '/Gallery/GIRLS/3.jpg',
+    '/Gallery/GIRLS/4.jpg', '/Gallery/GIRLS/5.jpg', '/Gallery/GIRLS/6.jpg',
+    '/Gallery/GIRLS/7.jpg', '/Gallery/GIRLS/8.jpg', '/Gallery/GIRLS/9.jpg',
+    '/Gallery/GIRLS/10.png',
+];
 
-const allProducts = generateProducts();
+const sportsImages = [
+    '/Gallery/SPORTS/S 1.jpg', '/Gallery/SPORTS/S 2.jpg', '/Gallery/SPORTS/S 3.jpg',
+    '/Gallery/SPORTS/S 4.jpg', '/Gallery/SPORTS/S 5.jpg', '/Gallery/SPORTS/S 6.jpg',
+    '/Gallery/SPORTS/S 7.jpg', '/Gallery/SPORTS/S 8.jpg', '/Gallery/SPORTS/S 9.jpg',
+    '/Gallery/SPORTS/S 10.jpg', '/Gallery/SPORTS/S 11.jpg', '/Gallery/SPORTS/S 12.webp',
+    '/Gallery/SPORTS/S 13.jpg', '/Gallery/SPORTS/S 14.jpg', '/Gallery/SPORTS/S 15.jpg',
+    '/Gallery/SPORTS/S 16.jpg', '/Gallery/SPORTS/S 17.jpg', '/Gallery/SPORTS/S 18.jpg',
+    '/Gallery/SPORTS/S 19.jpg', '/Gallery/SPORTS/S 20.jpg', '/Gallery/SPORTS/S 21.jpg',
+    '/Gallery/SPORTS/S 22.jpg', '/Gallery/SPORTS/S 23 .jpg', '/Gallery/SPORTS/S 24.jpg',
+    '/Gallery/SPORTS/S 25.jpg', '/Gallery/SPORTS/S 26.jpg', '/Gallery/SPORTS/S 27.jpg',
+    '/Gallery/SPORTS/S 28.jpg', '/Gallery/SPORTS/S 29.jpg', '/Gallery/SPORTS/S 30.jpg',
+    '/Gallery/SPORTS/S 31.jpg', '/Gallery/SPORTS/S 32.jpg', '/Gallery/SPORTS/S 33.jpg',
+    '/Gallery/SPORTS/S 34.jpg', '/Gallery/SPORTS/S 35.jpg', '/Gallery/SPORTS/S 36.jpg',
+    '/Gallery/SPORTS/S 37.jpg', '/Gallery/SPORTS/S 38.jpg', '/Gallery/SPORTS/S 39.jpg',
+    '/Gallery/SPORTS/S 40.jpg', '/Gallery/SPORTS/S 41.jpg', '/Gallery/SPORTS/S 42.jpg',
+    '/Gallery/SPORTS/S 43.jpg', '/Gallery/SPORTS/S 44.jpg', '/Gallery/SPORTS/S 45.jpg',
+    '/Gallery/SPORTS/S 46.jpg', '/Gallery/SPORTS/S 47.jpg', '/Gallery/SPORTS/S 48.jpg',
+    '/Gallery/SPORTS/S 49.jpg', '/Gallery/SPORTS/S 50.jpg', '/Gallery/SPORTS/S 51.jpg',
+    '/Gallery/SPORTS/S 52.webp', '/Gallery/SPORTS/S 53.webp', '/Gallery/SPORTS/S 54.webp',
+    '/Gallery/SPORTS/S 55.webp', '/Gallery/SPORTS/S 56.webp', '/Gallery/SPORTS/S 57.webp',
+    '/Gallery/SPORTS/S 58.webp', '/Gallery/SPORTS/S 59.webp', '/Gallery/SPORTS/S 60.webp',
+    '/Gallery/SPORTS/S 61.webp', '/Gallery/SPORTS/S 62.webp',
+];
+
+const allProducts: Product[] = [
+    ...boysImages.map((image, i) => ({
+        id: i + 1,
+        category: 'Boys Collection',
+        title: `Boys Collection ${i + 1}`,
+        image,
+    })),
+    ...girlsImages.map((image, i) => ({
+        id: boysImages.length + i + 1,
+        category: 'Girls Collection',
+        title: `Girls Collection ${i + 1}`,
+        image,
+    })),
+    ...sportsImages.map((image, i) => ({
+        id: boysImages.length + girlsImages.length + i + 1,
+        category: 'Sports Uniform',
+        title: `Sports Uniform ${i + 1}`,
+        image,
+    })),
+];
 
 // --- Sub-components ---
 
 const ProductCard = ({ product }: { product: Product }) => {
     return (
-        <div className="group relative aspect-[4/3] overflow-hidden rounded-xl bg-gray-100 cursor-pointer">
+        <div className="group relative aspect-[3/4] overflow-hidden rounded-xl bg-white border border-gray-100 shadow-sm hover:shadow-lg cursor-pointer transition-shadow duration-300">
             <img
                 src={product.image}
                 alt={product.title}
-                className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                className="w-full h-full object-contain p-2 transform group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
             />
-            {/* Overlay Gradient */}
-            <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-4 md:p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                <h3 className="text-white font-semibold text-sm md:text-base opacity-95 group-hover:opacity-100">
-                    {product.title}
-                </h3>
-            </div>
+            {/* Hover Overlay */}
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 rounded-xl" />
         </div>
     );
 };
@@ -86,22 +125,23 @@ const GalleryPage = () => {
             <Navigation />
 
             {/* Banner Section */}
-            <div className="pt-24 pb-12 text-center bg-white border-b border-gray-100">
+            <div className="pt-20 pb-6 md:pt-24 md:pb-12 text-center bg-white border-b border-gray-100">
                 <div className="container mx-auto px-4">
-                    <h1 className="text-3xl md:text-5xl font-black text-gray-900 mb-4 tracking-tighter uppercase">
+                    <h1 className="text-2xl md:text-5xl font-black text-gray-900 mb-2 md:mb-4 tracking-tighter uppercase">
                         Our Gallery
                     </h1>
-                    <p className="text-gray-500 text-lg max-w-2xl mx-auto font-medium mb-8">
+                    <p className="text-gray-500 text-sm md:text-lg max-w-2xl mx-auto font-medium mb-5 md:mb-8">
                         Explore our collection of stunning gallery images
                     </p>
 
-                    {/* Category Tabs */}
-                    <div className="flex flex-wrap justify-center gap-2 md:gap-4">
+                    {/* Category Tabs — horizontally scrollable on mobile */}
+                    <div className="flex overflow-x-auto md:flex-wrap md:justify-center gap-2 md:gap-4 pb-1 md:pb-0"
+                        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
                         {categories.map((cat) => (
                             <button
                                 key={cat}
                                 onClick={() => handleCategoryChange(cat)}
-                                className={`px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-300 ${activeCategory === cat
+                                className={`flex-shrink-0 px-5 py-2 rounded-full text-xs md:text-sm font-bold transition-all duration-300 ${activeCategory === cat
                                     ? 'bg-gray-900 text-white shadow-lg scale-105'
                                     : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                                     }`}
@@ -113,28 +153,56 @@ const GalleryPage = () => {
                 </div>
             </div>
 
-            <main className="flex-grow py-12 container mx-auto px-4 sm:px-6 lg:px-8">
+            <main className="flex-grow py-6 md:py-12 container mx-auto px-3 sm:px-6 lg:px-8">
                 {/* Active Category Title */}
-                <div className="flex items-center gap-4 mb-10">
-                    <h2 className="text-2xl md:text-3xl font-black text-gray-900 uppercase tracking-tighter">
+                <div className="flex items-center gap-3 mb-6 md:mb-10">
+                    <h2 className="text-lg md:text-3xl font-black text-gray-900 uppercase tracking-tighter whitespace-nowrap">
                         {activeCategory}
                     </h2>
-                    <div className="h-[2px] bg-gray-200 flex-1"></div>
-                    <span className="text-sm font-bold text-gray-400 uppercase tracking-widest bg-white px-4 py-1 rounded-full border border-gray-100">
+                    <div className="h-[2px] bg-gray-200 flex-1 min-w-0" />
+                    <span className="text-xs md:text-sm font-bold text-gray-400 uppercase tracking-widest bg-white px-3 py-1 rounded-full border border-gray-100 whitespace-nowrap">
                         {filteredProducts.length} Images
                     </span>
                 </div>
 
                 {/* Image Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16">
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 sm:gap-4 mb-10 md:mb-16">
                     {currentItems.map((product) => (
                         <ProductCard key={product.id} product={product} />
                     ))}
                 </div>
 
                 {/* Pagination Controls */}
-                <div className="flex flex-col items-center space-y-4">
-                    <div className="flex items-center space-x-2">
+                <div className="flex flex-col items-center space-y-3">
+                    {/* Mobile: simple prev/next with page info */}
+                    <div className="flex items-center gap-3 w-full max-w-xs sm:hidden">
+                        <button
+                            onClick={() => paginate(currentPage - 1)}
+                            disabled={currentPage === 1}
+                            className={`flex-1 flex items-center justify-center gap-1 px-3 py-2.5 rounded-lg bg-white border border-gray-200 text-sm font-semibold transition-all ${currentPage === 1
+                                ? 'text-gray-300 cursor-not-allowed'
+                                : 'text-gray-700 hover:bg-gray-50'
+                                }`}
+                        >
+                            <ChevronLeft size={16} /> Prev
+                        </button>
+                        <span className="text-sm font-bold text-gray-700 whitespace-nowrap">
+                            {currentPage} / {totalPages}
+                        </span>
+                        <button
+                            onClick={() => paginate(currentPage + 1)}
+                            disabled={currentPage === totalPages}
+                            className={`flex-1 flex items-center justify-center gap-1 px-3 py-2.5 rounded-lg bg-white border border-gray-200 text-sm font-semibold transition-all ${currentPage === totalPages
+                                ? 'text-gray-300 cursor-not-allowed'
+                                : 'text-gray-700 hover:bg-gray-50'
+                                }`}
+                        >
+                            Next <ChevronRight size={16} />
+                        </button>
+                    </div>
+
+                    {/* Desktop: full pagination */}
+                    <div className="hidden sm:flex items-center space-x-2">
                         <button
                             onClick={() => paginate(currentPage - 1)}
                             disabled={currentPage === 1}
@@ -178,8 +246,8 @@ const GalleryPage = () => {
                         </button>
                     </div>
 
-                    <p className="text-sm text-gray-500 font-medium">
-                        Page {currentPage} of {totalPages} ({filteredProducts.length} images in {activeCategory})
+                    <p className="text-xs md:text-sm text-gray-500 font-medium text-center">
+                        Page {currentPage} of {totalPages} &mdash; {filteredProducts.length} images in {activeCategory}
                     </p>
                 </div>
             </main>

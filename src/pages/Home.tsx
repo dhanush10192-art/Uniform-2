@@ -22,7 +22,6 @@ const Home = () => {
       <CustomRoundNeck />
       <Blog />
       <About />
-      <Testimonials />
       {/* Contact Section */}
       <section id="contact" className="py-12 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4">
@@ -37,7 +36,7 @@ const Home = () => {
           <h2 className="text-2xl font-semibold mb-4">Enquiry</h2>
           <p className="text-gray-700 mb-6">Send us an enquiry and we'll get back to you shortly.</p>
 
-          <form className="space-y-4" action="mailto:info@example.com" method="post" encType="text/plain">
+          <form className="space-y-4" action="mailto:fastcolorsfashion@gmail.com" method="post" encType="text/plain">
             <div>
               <label className="block text-sm font-medium text-gray-700">Name</label>
               <input type="text" name="name" className="mt-1 block w-full border rounded-md p-2" />
@@ -91,6 +90,8 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      <Testimonials />
     </main>
   );
 };

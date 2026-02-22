@@ -16,7 +16,7 @@ const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems = ['Home', 'Services', 'Gallery', 'Blog', 'About'];
+  const navItems = ['Home','Gallery', 'Blog', 'About'];
 
   const scrollToSection = (sectionId: string) => {
     setIsMobileMenuOpen(false);

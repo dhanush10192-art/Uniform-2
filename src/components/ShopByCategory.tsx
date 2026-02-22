@@ -11,24 +11,14 @@ const ShopByCategory = () => {
         },
         {
             id: 2,
-            title: 'Sports Uniforms',
-            image: '/999.png',
+            title: 'Girls Uniform',
+            image: '/Girls Uni.jpg',
         },
         {
             id: 4,
-            title: 'Lab Coats',
-            image: '/222.png',
-        },
-        {
-            id: 5,
-            title: 'Scouts & Guides,NCC, RSP, Cubs & Bulbuls, Junior Red Cross',
-            image: '/news-5.jpg',
-        },
-        {
-            id: 6,
-            title: 'Teaching /Non Teaching Staff',
-            image: '/33.png',
-        },       
+            title: 'Sports Uniforms',
+            image: '/999.png',
+        },      
     ];
 
     return (
