@@ -5,7 +5,7 @@ const Gallery = () => {
   const navigate = useNavigate();
 
   const galleryItems = [
-    { id: 1, title: 'Boys Collection', image: '/Gallery/BOYS/B7.jpg', alt: 'Boys Collection' },
+    { id: 101, title: 'Sublimation Design', image: '/Gallery/SUBLIMATION SERVER/1.jpg', alt: 'Sublimation Design' },
     { id: 4, title: 'Girls Collection', image: '/004.jpg', alt: 'Girls Collection' },
     { id: 7, title: 'Sports Uniform', image: '/007.jpg', alt: 'Sports Uniform' },
   ];

@@ -33,7 +33,7 @@ const Hero = () => {
           <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden">
             <video
               className="absolute top-1/2 left-1/2 w-[177.77vh] h-[56.25vw] min-w-full min-h-full -translate-x-1/2 -translate-y-1/2 object-cover"
-              src="miii.mp4"
+              src="dd.mp4"
               autoPlay
               loop
               muted
@@ -55,9 +55,9 @@ const Hero = () => {
         <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex items-center h-full">
           <div className="w-full md:w-1/2 text-white p-4 md:p-0 text-center md:text-left">
             <h1 className="text-3xl md:text-5xl font-medium mb-6 leading-tight drop-shadow-lg max-w-md">
-              Uniforms Designed <br />
-              For The Best Days <br />
-              Of Your Life.
+              Vibrant & Durable <br />
+              Sublimation Print <br />
+              Designs.
             </h1>
             <div className="flex flex-wrap gap-4 justify-center md:justify-start">
               <a

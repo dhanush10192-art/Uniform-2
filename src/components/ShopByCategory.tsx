@@ -11,14 +11,14 @@ const ShopByCategory = () => {
         },
         {
             id: 2,
-            title: 'Girls Uniform',
-            image: '/Girls Uni.jpg',
+            title: 'Sublimation',
+            image: '/Gallery/SUBLIMATION SERVER/3.jpg',
         },
         {
             id: 4,
             title: 'Sports Uniforms',
             image: '/999.png',
-        },      
+        },
     ];
 
     return (

@@ -20,20 +20,20 @@ const WhatWeDo = () => {
         <div className="mt-8 grid gap-6">
           <div className="grid md:grid-cols-3 gap-6 items-center">
             <img
-              src="/9001.jpg"
-              alt="Cricket jersey design left"
+              src="/Gallery/SUBLIMATION SERVER/2.jpg"
+              alt="Sublimation design 1"
               className="w-full h-50 object-cover rounded-lg hidden md:block"
             />
 
             <img
-              src="/7001.jpg"
-              alt="Jersey production facility"
+              src="/Gallery/SUBLIMATION SERVER/3.jpg"
+              alt="Sublimation production"
               className="w-100% h-100  object-cover rounded-lg"
             />
 
             <img
-              src="/dkdk.jpg"
-              alt="Cricket jersey design right"
+              src="/Gallery/SUBLIMATION SERVER/4.jpg"
+              alt="Sublimation design 2"
               className="w-full h-75 object-cover rounded-lg hidden md:block"
             />
           </div>

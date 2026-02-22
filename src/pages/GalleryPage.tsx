@@ -55,6 +55,8 @@ const sportsImages = [
     '/Gallery/SPORTS/S 61.webp', '/Gallery/SPORTS/S 62.webp',
 ];
 
+const sublimationImages = Array.from({ length: 40 }, (_, i) => `/Gallery/SUBLIMATION SERVER/${i + 1}.jpg`);
+
 const allProducts: Product[] = [
     ...boysImages.map((image, i) => ({
         id: i + 1,
@@ -72,6 +74,12 @@ const allProducts: Product[] = [
         id: boysImages.length + girlsImages.length + i + 1,
         category: 'Sports Uniform',
         title: `Sports Uniform ${i + 1}`,
+        image,
+    })),
+    ...sublimationImages.map((image, i) => ({
+        id: boysImages.length + girlsImages.length + sportsImages.length + i + 1,
+        category: 'Sublimation Design',
+        title: `Sublimation Design ${i + 1}`,
         image,
     })),
 ];
@@ -94,7 +102,7 @@ const ProductCard = ({ product }: { product: Product }) => {
 };
 
 const GalleryPage = () => {
-    const [activeCategory, setActiveCategory] = useState('Boys Collection');
+    const [activeCategory, setActiveCategory] = useState('Sublimation Design');
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 12;
 
@@ -104,7 +112,7 @@ const GalleryPage = () => {
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
     const currentItems = filteredProducts.slice(indexOfFirstItem, indexOfLastItem);
 
-    const categories = ['Boys Collection', 'Girls Collection', 'Sports Uniform'];
+    const categories = ['Sublimation Design', 'Boys Collection', 'Girls Collection', 'Sports Uniform'];
 
     const paginate = (pageNumber: number) => {
         setCurrentPage(pageNumber);
