@@ -126,9 +126,6 @@ const Testimonials = () => {
                                             <h4 className="font-bold text-gray-900 text-lg">
                                                 {testimonials[currentIndex].name}
                                             </h4>
-                                            <p className="text-gray-500 text-sm">
-                                                {testimonials[currentIndex].role}
-                                            </p>
                                         </div>
                                     </div>
                                 </div>

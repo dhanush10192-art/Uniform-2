@@ -6,7 +6,7 @@ const About = () => {
           <div className="relative">
             <div className="rounded-lg overflow-hidden shadow-lg">
               <img
-                src="/Gallery/SUBLIMATION SERVER/7.jpg"
+                src="/Gallery/SUBLIMATION SERVER/03.png"
                 alt="Sublimation Production"
                 className="w-full h-auto"
               />

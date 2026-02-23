@@ -15,7 +15,7 @@ const CustomPolo = () => {
                     >
                         <div className="relative">
                             <img
-                                src="/Gallery/SUBLIMATION SERVER/6.jpg"
+                                src="/Gallery/SUBLIMATION SERVER/01.png"
                                 alt="Sublimation Custom Polo"
                                 className="w-full h-auto rounded-[2.5rem] shadow-2xl"
                             />

@@ -34,7 +34,7 @@ const CustomRoundNeck = () => {
                     >
                         <div className="relative">
                             <img
-                                src="/Gallery/SUBLIMATION SERVER/5.jpg"
+                                src="/Gallery/SUBLIMATION SERVER/02.png"
                                 alt="Sublimation Print Design"
                                 className="w-full h-auto rounded-[2.5rem] shadow-2xl"
                             />

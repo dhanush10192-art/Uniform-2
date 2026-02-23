@@ -22,10 +22,10 @@ const Footer = () => {
                   className="h-12 w-auto"
                 />
               </div>
-              <span className="text-white font-bold text-lg">Fast Colour</span>
+              <span className="text-white font-bold text-lg">FastColors</span>
             </div>
             <p className="text-gray-400 mb-6 leading-relaxed">
-              Fast Colour delivers premium custom uniforms with vibrant sublimation prints, durable fabrics, precise stitching, quick turnaround, personalized designs, reliable quality, and comfortable fits for every team.
+              FastColors delivers premium custom sublimation with vibrant sublimation prints, durable fabrics, precise stitching, quick turnaround, personalized designs, reliable quality, and comfortable fits for every team.
             </p>
             <div className="flex gap-4">
               {socialLinks.map((social, index) => {
@@ -86,7 +86,7 @@ const Footer = () => {
         <div className="border-t border-gray-700 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm">
-              &copy; 2024 Fast Colour. All rights reserved.
+              &copy; 2026 FastColors. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm">
               <a href="#" className="hover:text-blue-400 transition-colors">Privacy Policy</a>
