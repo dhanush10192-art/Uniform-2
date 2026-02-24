@@ -7,7 +7,11 @@ export const useScrollToSection = () => {
     const scrollToSection = (sectionId: string) => {
         // Special handling for Gallery to navigate to the separate page
         if (sectionId.toLowerCase() === 'gallery') {
-            navigate('/gallery');
+            if (location.pathname === '/gallery') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                navigate('/gallery');
+            }
             return;
         }
 

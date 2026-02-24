@@ -54,19 +54,16 @@ const Hero = () => {
 
         {/* Content Layer */}
         <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex items-center h-full">
-          <div className="w-full md:w-3/5 lg:w-1/2 text-white p-4 md:p-0 text-center md:text-left">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-8 leading-[0.9] tracking-tighter uppercase drop-shadow-2xl">
-              Vibrant & <span className="text-uniform-secondary">Durable</span> <br />
-              Sublimation <br />
-              Prints.
+          <div className="w-full md:w-1/2 text-white p-4 md:p-0 text-center md:text-left">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight drop-shadow-lg">
+              Vibrant & Durable <br />
+              Sublimation Print <br />
+              Designs.
             </h1>
-            <p className="text-base md:text-xl text-gray-200 mb-10 max-w-md mx-auto md:mx-0 font-medium">
-              High-definition performance wear designed for comfort and built to last.
-            </p>
             <div className="flex flex-wrap gap-4 justify-center md:justify-start">
               <button
                 onClick={() => scrollToSection('gallery')}
-                className="bg-uniform-secondary text-white hover:bg-uniform-primary text-sm md:text-lg font-bold py-4 px-10 md:px-14 rounded-full transition-all duration-300 shadow-2xl hover:shadow-uniform-secondary/50 transform hover:-translate-y-1 uppercase tracking-widest"
+                className="bg-white text-[#0a1d37] hover:bg-gray-100 text-lg font-bold py-3 md:py-4 px-8 md:px-12 rounded transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105"
               >
                 Explore Collection
               </button>

@@ -43,18 +43,18 @@ const Navigation = () => {
             <span className="sr-only">Fast Colour Sublimation</span>
           </button>
 
-          <div className="hidden md:flex space-x-10">
+          <div className="hidden md:flex space-x-8">
             {navItems.map((item) => (
               <button
                 key={item}
                 onClick={() => handleNavClick(item)}
-                className={`text-xs font-black uppercase tracking-widest transition-all duration-300 relative group py-2 ${(location.pathname === '/gallery' && item === 'Gallery') || (location.pathname === '/' && item === 'Home' && !isScrolled)
+                className={`text-sm font-medium transition-colors duration-300 relative group ${(location.pathname === '/gallery' && item === 'Gallery') || (location.pathname === '/' && item === 'Home' && !isScrolled)
                   ? 'text-uniform-secondary'
-                  : 'text-navy-dark hover:text-uniform-secondary'
+                  : 'text-gray-700 hover:text-uniform-secondary'
                   }`}
               >
                 {item}
-                <span className={`absolute -bottom-1 left-0 h-1 bg-uniform-secondary transition-all duration-500 ${(location.pathname === '/gallery' && item === 'Gallery')
+                <span className={`absolute -bottom-1 left-0 h-0.5 bg-uniform-secondary transition-all duration-300 ${(location.pathname === '/gallery' && item === 'Gallery')
                   ? 'w-full'
                   : 'w-0 group-hover:w-full'
                   }`}></span>

@@ -11,14 +11,11 @@ const WhatWeDo = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-8"
         >
-          <h2 className="text-3xl md:text-6xl font-black text-navy-dark mb-6 uppercase tracking-tighter leading-[0.9]">
-            The Art of <br />
-            <span className="text-uniform-secondary">Sublimation</span>
-          </h2>
-          <p className="text-gray-500 max-w-2xl mx-auto font-bold text-sm md:text-base leading-relaxed">
-            A state-of-the-art fusion process that embeds ink directly into the fabric fibers. Unlimited colors, intricate details, and photographic quality that never cracks or peels.
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">Sublimation Printing</h2>
+          <p className="text-gray-600 max-w-3xl mx-auto">
+            Sublimation printing is a state-of-the-art process that fuses ink directly into the fabric fibers. This technology allows for unlimited colors, intricate designs, and photographic quality prints that are breathable, extremely durable, and will never crack or peel.
           </p>
         </motion.div>
 
