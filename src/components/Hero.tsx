@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Truck, RotateCcw, CreditCard, Headphones } from 'lucide-react';
+import { useScrollToSection } from '../utils/navigation';
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const scrollToSection = useScrollToSection();
 
   const jerseyImages = [
     'banner1.jpg',
@@ -25,14 +27,14 @@ const Hero = () => {
 
 
       {/* 1. NEW VIDEO HEADER SECTION */}
-      <section className="relative w-full min-h-[600px] flex items-center overflow-hidden pt-20">
+      <section className="relative w-full min-h-[450px] md:min-h-[650px] flex items-center overflow-hidden pt-20">
 
         {/* Background Video Layer */}
         <div className="absolute inset-0 z-0 bg-slate-950">
-          <div className="absolute inset-0 z-10 bg-/40"></div> {/* Darker overlay for professional look */}
+          <div className="absolute inset-0 z-10 bg-black/50 md:bg-black/20"></div> {/* Overlay for readability */}
           <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden">
             <video
-              className="absolute top-1/2 left-1/2 w-[177.77vh] h-[56.25vw] min-w-full min-h-full -translate-x-1/2 -translate-y-1/2 object-cover"
+              className="absolute top-1/2 left-1/2 min-w-full min-h-full -translate-x-1/2 -translate-y-1/2 object-cover"
               src="dd.mp4"
               autoPlay
               loop
@@ -43,31 +45,31 @@ const Hero = () => {
         </div>
 
         {/* Mobile Gradient Overlay (Bottom Up) */}
-        <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-[#0a1d37]/90 to-transparent z-10 md:hidden"></div>
+        <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-[#0a1d37] to-transparent z-10 md:hidden"></div>
 
         {/* Desktop Angled Navy Gradient Overlay - Left Side */}
         <div
-          className="hidden md:block absolute inset-y-0 left-0 w-[60%] lg:w-[55%] bg-gradient-to-r from-[#0a1d37] to-[#1e40af]/80 z-10 shadow-2xl"
-          style={{ clipPath: 'polygon(0 0, 100% 0, 85% 100%, 0% 100%)' }}
+          className="hidden md:block absolute inset-y-0 left-0 w-[60%] lg:w-[50%] bg-gradient-to-r from-[#0a1d37] via-[#0a1d37]/95 to-transparent z-10"
         ></div>
 
         {/* Content Layer */}
         <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex items-center h-full">
-          <div className="w-full md:w-1/2 text-white p-4 md:p-0 text-center md:text-left">
-            <h1 className="text-3xl md:text-5xl font-medium mb-6 leading-tight drop-shadow-lg max-w-md">
-              Vibrant & Durable <br />
-              Sublimation Print <br />
-              Designs.
+          <div className="w-full md:w-3/5 lg:w-1/2 text-white p-4 md:p-0 text-center md:text-left">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-8 leading-[0.9] tracking-tighter uppercase drop-shadow-2xl">
+              Vibrant & <span className="text-uniform-secondary">Durable</span> <br />
+              Sublimation <br />
+              Prints.
             </h1>
+            <p className="text-base md:text-xl text-gray-200 mb-10 max-w-md mx-auto md:mx-0 font-medium">
+              High-definition performance wear designed for comfort and built to last.
+            </p>
             <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-              <a
-                href="https://wa.me/917812865788"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white text-[#0a1d37] hover:bg-gray-100 text-lg font-bold py-3 md:py-4 px-8 md:px-12 rounded transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105"
+              <button
+                onClick={() => scrollToSection('gallery')}
+                className="bg-uniform-secondary text-white hover:bg-uniform-primary text-sm md:text-lg font-bold py-4 px-10 md:px-14 rounded-full transition-all duration-300 shadow-2xl hover:shadow-uniform-secondary/50 transform hover:-translate-y-1 uppercase tracking-widest"
               >
                 Explore Collection
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -75,7 +77,7 @@ const Hero = () => {
 
 
       {/* 2. EXISTING SLIDER SECTION */}
-      <section className="bg-gray-50 py-16">
+      <section className="bg-gray-50 py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* Slider Section */}
@@ -83,20 +85,20 @@ const Hero = () => {
             {/* Navigation Arrows - Outside the card on large screens */}
             <button
               onClick={prevSlide}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 z-20 p-2 text-uniform-primary hover:text-uniform-secondary transition-colors hidden md:block"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 z-20 p-2 text-uniform-primary hover:text-uniform-secondary transition-colors hidden lg:block"
             >
               <ChevronLeft size={40} strokeWidth={2.5} />
             </button>
 
             <button
               onClick={nextSlide}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 z-20 p-2 text-uniform-primary hover:text-uniform-secondary transition-colors hidden md:block"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 z-20 p-2 text-uniform-primary hover:text-uniform-secondary transition-colors hidden lg:block"
             >
               <ChevronRight size={40} strokeWidth={2.5} />
             </button>
 
             {/* Card Slider */}
-            <div className="relative h-[250px] sm:h-[400px] md:h-[500px] w-full rounded-3xl overflow-hidden">
+            <div className="relative h-[400px] md:h-[500px] lg:h-[600px] w-full rounded-2xl md:rounded-3xl overflow-hidden shadow-xl">
               {jerseyImages.map((img, index) => (
                 <div
                   key={index}
@@ -105,90 +107,73 @@ const Hero = () => {
                 >
                   {/* Background Image */}
                   <div
-                    className="absolute inset-0 bg-cover bg-[center_left] sm:bg-center"
+                    className="absolute inset-0 bg-cover bg-center"
                     style={{ backgroundImage: `url(${img})` }}
                   />
-
-                  {/* Dark Gradient Overlay */}
-                  {/* <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div> */}
-
-                  {/* Content */}
-                  <div className="absolute inset-0 flex flex-col justify-center px-8 md:px-16 max-w-2xl text-white">
-                    <h2 className="text-xl md:text-5xl font-bold uppercase leading-tight mb-2 md:mb-4">
-                      <br />
-                    </h2>
-
-
-
-
-
-
-
-                  </div>
                 </div>
               ))}
 
               {/* Dots Pagination */}
-              <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+              <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20">
                 {jerseyImages.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => setCurrentSlide(index)}
-                    className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentSlide ? 'bg-uniform-secondary w-8' : 'bg-gray-400/50 hover:bg-white/80'
+                    className={`h-2.5 rounded-full transition-all duration-300 ${index === currentSlide ? 'bg-white w-8' : 'bg-white/40 hover:bg-white/80 w-2.5'
                       }`}
                   />
                 ))}
               </div>
 
               {/* Mobile Navigation Arrows (Inside card) */}
-              <div className="absolute inset-0 flex justify-between items-center px-2 md:hidden pointer-events-none">
-                <button onClick={prevSlide} className="p-2 pointer-events-auto text-white/70 hover:text-white">
-                  <ChevronLeft size={30} />
+              <div className="absolute inset-0 flex justify-between items-center px-4 md:hidden pointer-events-none z-20">
+                <button onClick={prevSlide} className="p-2 pointer-events-auto bg-black/20 rounded-full text-white/90 hover:text-white">
+                  <ChevronLeft size={24} />
                 </button>
-                <button onClick={nextSlide} className="p-2 pointer-events-auto text-white/70 hover:text-white">
-                  <ChevronRight size={30} />
+                <button onClick={nextSlide} className="p-2 pointer-events-auto bg-black/20 rounded-full text-white/90 hover:text-white">
+                  <ChevronRight size={24} />
                 </button>
               </div>
             </div>
           </div>
 
           {/* Features/Trust Banner */}
-          <div className="mt-8 bg-uniform-primary rounded-xl py-8 px-4 sm:px-8 text-white shadow-xl">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="mt-8 bg-uniform-primary rounded-xl py-8 px-6 md:px-8 text-white shadow-xl">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
 
               {/* Feature 1 */}
-              <div className="flex items-center gap-4 border-b md:border-b-0 md:border-r border-blue-800 pb-4 md:pb-0 last:border-0">
-                <Truck size={40} className="text-white flex-shrink-0" strokeWidth={1.5} />
+              <div className="flex items-center gap-4 border-b sm:border-b-0 sm:border-r border-blue-800/30 pb-4 sm:pb-0 last:border-0">
+                <Truck size={36} className="text-blue-400 flex-shrink-0" strokeWidth={1.5} />
                 <div>
-                  <h3 className="font-bold text-lg uppercase">Fast Delivery</h3>
-                  <p className="text-blue-200 text-xs uppercase tracking-wide">All over India Delivery</p>
+                  <h3 className="font-bold text-base uppercase">Fast Delivery</h3>
+                  <p className="text-blue-200/70 text-[10px] uppercase tracking-wider">All over India</p>
                 </div>
               </div>
 
               {/* Feature 2 */}
-              <div className="flex items-center gap-4 border-b md:border-b-0 md:border-r border-blue-800 pb-4 md:pb-0 last:border-0">
-                <RotateCcw size={40} className="text-white flex-shrink-0" strokeWidth={1.5} />
+              <div className="flex items-center gap-4 border-b lg:border-b-0 lg:border-r border-blue-800/30 pb-4 sm:pb-0 last:border-0 lg:border-r-0 xl:border-r">
+                <RotateCcw size={36} className="text-blue-400 flex-shrink-0" strokeWidth={1.5} />
                 <div>
-                  <h3 className="font-bold text-lg uppercase">7 Days Return</h3>
-                  <p className="text-blue-200 text-xs uppercase tracking-wide">If goods have problems</p>
+                  <h3 className="font-bold text-base uppercase">7 Days Return</h3>
+                  <p className="text-blue-200/70 text-[10px] uppercase tracking-wider">Quality Guarantee</p>
                 </div>
               </div>
 
               {/* Feature 3 */}
-              <div className="flex items-center gap-4 border-b md:border-b-0 md:border-r border-blue-800 pb-4 md:pb-0 last:border-0">
-                <CreditCard size={40} className="text-white flex-shrink-0" strokeWidth={1.5} />
+              <div className="flex items-center gap-4 border-b sm:border-b-0 sm:border-r border-blue-800/30 pb-4 sm:pb-0 last:border-0">
+                <CreditCard size={36} className="text-blue-400 flex-shrink-0" strokeWidth={1.5} />
                 <div>
-                  <h3 className="font-bold text-lg uppercase">Secure Payment</h3>
-                  <p className="text-blue-200 text-xs uppercase tracking-wide">100% Secure Payment</p>
+                  <h3 className="font-bold text-base uppercase">Secure Payment</h3>
+                  <p className="text-blue-200/70 text-[10px] uppercase tracking-wider">100% Safe Checkout</p>
                 </div>
               </div>
 
               {/* Feature 4 */}
               <div className="flex items-center gap-4">
-                <Headphones size={40} className="text-white flex-shrink-0" strokeWidth={1.5} />
+                <Headphones size={36} className="text-blue-400 flex-shrink-0" strokeWidth={1.5} />
                 <div>
-                  <h3 className="font-bold text-lg uppercase">Customer Care</h3>
-                  <p className="text-blue-200 text-xs uppercase tracking-wide">10am to 7pm Except Sundays</p>
+                  <h3 className="font-bold text-base uppercase">Customer Care</h3>
+                  <p className="text-blue-200/70 text-[10px] uppercase tracking-wider">Mon-Sat 10am-7pm</p>
                 </div>
               </div>
 

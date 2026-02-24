@@ -26,37 +26,37 @@ const ShopByCategory = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 {/* Header */}
-                <div className="flex justify-between items-center mb-10">
-                    <h2 className="text-2xl sm:text-3xl font-light text-navy-dark">
+                <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-10">
+                    <h2 className="text-2xl md:text-3xl font-light text-navy-dark text-center sm:text-left">
                         SHOP <span className="font-bold">BY CATEGORY</span>
                     </h2>
                     <button
                         onClick={() => navigate('/gallery')}
-                        className="px-6 py-1.5 border border-blue-600 text-blue-600 rounded-full text-sm font-medium hover:bg-blue-50 transition-colors"
+                        className="px-8 py-2 border-2 border-uniform-secondary text-uniform-secondary rounded-full text-sm font-bold hover:bg-uniform-secondary hover:text-white transition-all duration-300"
                     >
                         View All
                     </button>
                 </div>
 
-                {/* Categories Grid/Flex */}
-                <div className="flex flex-wrap justify-center sm:justify-between gap-8 md:gap-4 overflow-x-auto pb-4">
+                {/* Categories Grid */}
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-6 md:gap-8">
                     {categories.map((category) => (
                         <div
                             key={category.id}
-                            className="group flex flex-col items-center cursor-pointer min-w-[100px]"
+                            className="group flex flex-col items-center cursor-pointer"
                             onClick={() => navigate('/gallery')}
                         >
-                            <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full p-1 border-2 border-transparent group-hover:border-uniform-secondary transition-all duration-300">
-                                <div className="w-full h-full rounded-full overflow-hidden border-4 border-blue-50"> {/* Light blue border emulator */}
+                            <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full p-1.5 border-2 border-gray-100 group-hover:border-uniform-secondary transition-all duration-500 shadow-sm hover:shadow-md">
+                                <div className="w-full h-full rounded-full overflow-hidden">
                                     <img
                                         src={category.image}
                                         alt={category.title}
-                                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                                     />
                                 </div>
                             </div>
 
-                            <h3 className="mt-4 text-xs sm:text-sm font-medium text-gray-700 text-center uppercase tracking-wide max-w-[100px]">
+                            <h3 className="mt-4 text-sm md:text-base font-bold text-gray-800 text-center uppercase tracking-tighter group-hover:text-uniform-secondary transition-colors">
                                 {category.title}
                             </h3>
                         </div>

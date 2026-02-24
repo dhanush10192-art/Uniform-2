@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import WhatsAppIcon from '../components/WhatsAppIcon';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { galleryData } from '../data/galleryData';
 
 // --- Types ---
 type Product = {
-    id: number;
+    id: string | number;
     title: string;
     category: string;
     image: string;
@@ -16,6 +18,12 @@ type Product = {
 const sublimationImages = Array.from({ length: 40 }, (_, i) => `/Gallery/SUBLIMATION SERVER/${i + 1}.jpg`);
 
 const allProducts: Product[] = [
+    ...galleryData.map(item => ({
+        id: item.id,
+        title: item.title,
+        category: item.category,
+        image: item.image
+    })),
     ...sublimationImages.map((image, i) => ({
         id: i + 1,
         category: 'Sublimation Design',
@@ -28,7 +36,10 @@ const allProducts: Product[] = [
 
 const ProductCard = ({ product }: { product: Product }) => {
     return (
-        <div className="group relative aspect-[3/4] overflow-hidden rounded-xl bg-white border border-gray-100 shadow-sm hover:shadow-lg cursor-pointer transition-shadow duration-300">
+        <Link
+            to={`/gallery/${product.id}`}
+            className="group relative aspect-[3/4] overflow-hidden rounded-xl bg-white border border-gray-100 shadow-sm hover:shadow-lg cursor-pointer transition-shadow duration-300 block"
+        >
             <img
                 src={product.image}
                 alt={product.title}
@@ -37,7 +48,7 @@ const ProductCard = ({ product }: { product: Product }) => {
             />
             {/* Hover Overlay */}
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 rounded-xl" />
-        </div>
+        </Link>
     );
 };
 

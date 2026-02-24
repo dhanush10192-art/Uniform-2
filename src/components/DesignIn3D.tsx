@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
+import { useScrollToSection } from '../utils/navigation';
 
 const DesignIn3D = () => {
+  const scrollToSection = useScrollToSection();
   return (
     <section id="design3d" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -24,9 +26,12 @@ const DesignIn3D = () => {
               <li>• Order directly once your design is finalized</li>
             </ul>
 
-            <a href="#" className="inline-block px-6 py-3 bg-uniform-secondary text-white rounded-lg font-semibold shadow hover:bg-uniform-primary transition">
+            <button
+              onClick={() => scrollToSection('about')}
+              className="inline-block px-6 py-3 bg-uniform-secondary text-white rounded-lg font-semibold shadow hover:bg-uniform-primary transition"
+            >
               Learn More
-            </a>
+            </button>
           </motion.div>
 
           <motion.div

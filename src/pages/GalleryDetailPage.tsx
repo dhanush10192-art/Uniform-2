@@ -7,7 +7,21 @@ import WhatsAppIcon from '../components/WhatsAppIcon';
 
 const GalleryDetailPage = () => {
     const { id } = useParams<{ id: string }>();
-    const product = galleryData.find((item) => item.id === id);
+    let product = galleryData.find((item) => item.id === id);
+
+    // If it's one of the auto-generated sublimation designs from the main gallery page
+    if (!product && id && !isNaN(Number(id))) {
+        product = {
+            id: id,
+            title: `Sublimation Design ${id}`,
+            image: `/Gallery/SUBLIMATION SERVER/${id}.jpg`,
+            category: 'Sublimation Design',
+            sku: `SUB-${id.padStart(3, '0')}`,
+            price: 'Enquire for Price',
+            description: 'Our premium sublimation prints feature high-definition designs fused directly into the fabric for permanent, vibrant colors that never fade. Perfect for professional team kits and custom apparel.',
+            features: ['Permanent Color', 'Breathable Fabric', 'Full Bleed Design', 'High Definition']
+        };
+    }
 
     if (!product) {
         return (

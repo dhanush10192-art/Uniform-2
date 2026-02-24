@@ -30,13 +30,13 @@ const CustomPolo = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="w-full lg:w-1/2"
+                        className="w-full lg:w-1/2 text-center lg:text-left"
                     >
-                        <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-8 leading-tight">
-                            Premium Sublimation Prints
+                        <h2 className="text-3xl md:text-5xl font-bold text-slate-800 mb-6 md:mb-8 leading-tight uppercase tracking-tighter">
+                            Premium Sublimation <span className="text-uniform-secondary">Prints</span>
                         </h2>
-                        <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
-                            <p className="text-justify">
+                        <div className="space-y-6 text-base md:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                            <p className="text-justify md:text-center lg:text-justify lg:font-bold">
                                 Our premium sublimation printing process ensures that every design is embedded directly into the fabric, providing a permanent, high-resolution finish that will never crack, peel, or fade. Perfect for complex patterns and vibrant team colors on professional-grade performance fabrics.
                             </p>
                         </div>

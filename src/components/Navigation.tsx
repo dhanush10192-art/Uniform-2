@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { useScrollToSection } from '../utils/navigation';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
-  const navigate = useNavigate();
+  const scrollToSection = useScrollToSection();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,46 +17,11 @@ const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems = ['Home','Gallery', 'Blog', 'About'];
+  const navItems = ['Home', 'Gallery', 'Blog', 'About'];
 
-  const scrollToSection = (sectionId: string) => {
+  const handleNavClick = (item: string) => {
     setIsMobileMenuOpen(false);
-
-    // Special handling for Gallery to navigate to the separate page
-    if (sectionId === 'Gallery') {
-      navigate('/gallery');
-      return;
-    }
-
-    // Special handling for Home to navigate to top
-    if (sectionId === 'Home') {
-      if (location.pathname !== '/') {
-        navigate('/');
-        // We can't scroll immediately because the page hasn't loaded. 
-        // In a real app we might use a hash or context to scroll after nav.
-        // For now, just going to home is enough as home starts at top.
-      } else {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-      return;
-    }
-
-    // For other sections
-    if (location.pathname !== '/') {
-      navigate('/');
-      // Delay scroll to allow navigation to complete
-      setTimeout(() => {
-        const element = document.getElementById(sectionId.toLowerCase());
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 100);
-    } else {
-      const element = document.getElementById(sectionId.toLowerCase());
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
+    scrollToSection(item);
   };
 
   return (
@@ -66,7 +32,7 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <button
-            onClick={() => scrollToSection('Home')}
+            onClick={() => handleNavClick('Home')}
             className="flex items-center space-x-3 hover:opacity-80 transition-opacity"
           >
             <img
@@ -81,7 +47,7 @@ const Navigation = () => {
             {navItems.map((item) => (
               <button
                 key={item}
-                onClick={() => scrollToSection(item)}
+                onClick={() => handleNavClick(item)}
                 className={`font-medium transition-colors duration-300 relative group ${(location.pathname === '/gallery' && item === 'Gallery') || (location.pathname === '/' && item === 'Home' && !isScrolled) // Simple highlighting logic
                   ? 'text-uniform-secondary'
                   : 'text-black hover:text-gray-600'
@@ -106,17 +72,23 @@ const Navigation = () => {
       </div>
 
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ${isMobileMenuOpen ? 'max-h-screen' : 'max-h-0'
+        className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${isMobileMenuOpen ? 'max-h-[400px] opacity-100' : 'max-h-0 opacity-0'
           }`}
       >
-        <div className="px-4 py-4 bg-white border-t border-gray-100 shadow-xl space-y-2">
+        <div className="px-6 py-6 bg-white border-t border-gray-50 shadow-2xl space-y-1">
           {navItems.map((item) => (
             <button
               key={item}
-              onClick={() => scrollToSection(item)}
-              className="block w-full text-left px-4 py-3 text-black hover:text-[#BD22B8] hover:bg-gray-50 rounded-lg transition-all duration-300 font-medium"
+              onClick={() => handleNavClick(item)}
+              className={`block w-full text-left px-5 py-4 rounded-xl transition-all duration-300 font-bold uppercase tracking-widest text-sm ${(location.pathname === '/gallery' && item === 'Gallery') || (location.pathname === '/' && item === 'Home' && !isMobileMenuOpen)
+                  ? 'bg-uniform-secondary/10 text-uniform-secondary'
+                  : 'text-gray-700 hover:bg-slate-50 hover:text-uniform-secondary'
+                }`}
             >
-              {item}
+              <div className="flex items-center justify-between">
+                {item}
+                <svg className="w-4 h-4 opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" /></svg>
+              </div>
             </button>
           ))}
         </div>

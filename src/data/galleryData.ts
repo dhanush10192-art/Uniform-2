@@ -13,7 +13,7 @@ export const galleryData: GalleryItem[] = [
     {
         id: 'school-uniform-set',
         title: 'School Uniform Set',
-        image: '/school.png',
+        image: '/Gallery/SUBLIMATION SERVER/01.png',
         category: 'School Uniform',
         price: '₹899',
         sku: 'SCH-001',
@@ -23,7 +23,7 @@ export const galleryData: GalleryItem[] = [
     {
         id: 'sports-team-jersey',
         title: 'Sports Team Jersey',
-        image: '/999.png',
+        image: '/Gallery/SUBLIMATION SERVER/1.jpg',
         category: 'Sports Uniforms',
         price: '₹599',
         sku: 'SPT-002',
@@ -33,7 +33,7 @@ export const galleryData: GalleryItem[] = [
     {
         id: 'professional-lab-coat',
         title: 'Professional Lab Coat',
-        image: '/222.png',
+        image: '/Gallery/SUBLIMATION SERVER/2.jpg',
         category: 'Lab Coats',
         price: '₹749',
         sku: 'LAB-003',
@@ -43,7 +43,7 @@ export const galleryData: GalleryItem[] = [
     {
         id: 'scouts-guides-uniform',
         title: 'Scouts & Guides Uniform',
-        image: '/news-5.jpg',
+        image: '/Gallery/SUBLIMATION SERVER/3.jpg',
         category: 'Special Units',
         price: '₹999',
         sku: 'SCT-004',
@@ -53,7 +53,7 @@ export const galleryData: GalleryItem[] = [
     {
         id: 'staff-polo-shirt',
         title: 'Staff Polo Shirt',
-        image: '/33.png',
+        image: '/Gallery/SUBLIMATION SERVER/4.jpg',
         category: 'Staff Wear',
         price: '₹449',
         sku: 'STF-005',
@@ -63,7 +63,7 @@ export const galleryData: GalleryItem[] = [
     {
         id: 'premium-training-kit',
         title: 'Premium Training Kit',
-        image: '/Gallery/001.jpg',
+        image: '/Gallery/SUBLIMATION SERVER/5.jpg',
         category: 'Sports Uniforms',
         price: '₹1299',
         sku: 'TRN-006',
