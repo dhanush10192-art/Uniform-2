@@ -26,15 +26,19 @@ const ShopByCategory = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 {/* Header */}
-                <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-10">
-                    <h2 className="text-2xl md:text-3xl font-light text-navy-dark text-center sm:text-left">
-                        SHOP <span className="font-bold">BY CATEGORY</span>
-                    </h2>
+                <div className="flex flex-col sm:flex-row justify-between items-end gap-6 mb-16 border-b border-gray-100 pb-8">
+                    <div className="text-center sm:text-left">
+                        <h2 className="text-3xl md:text-5xl font-black text-navy-dark leading-none uppercase tracking-tighter">
+                            Shop By <span className="text-uniform-secondary">Category</span>
+                        </h2>
+                        <p className="text-gray-400 font-bold text-xs mt-3 uppercase tracking-widest">Premium Collection 2026</p>
+                    </div>
                     <button
                         onClick={() => navigate('/gallery')}
-                        className="px-8 py-2 border-2 border-uniform-secondary text-uniform-secondary rounded-full text-sm font-bold hover:bg-uniform-secondary hover:text-white transition-all duration-300"
+                        className="group flex items-center gap-2 px-10 py-4 bg-navy-dark text-white rounded-full text-xs font-black uppercase tracking-widest hover:bg-uniform-secondary transition-all duration-300 shadow-xl hover:shadow-uniform-secondary/20 transform hover:-translate-y-1"
                     >
-                        View All
+                        Explore All
+                        <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
                     </button>
                 </div>
 

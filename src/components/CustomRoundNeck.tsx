@@ -14,13 +14,32 @@ const CustomRoundNeck = () => {
                         transition={{ duration: 0.8 }}
                         className="w-full lg:w-1/2 order-2 lg:order-1 text-center lg:text-left"
                     >
-                        <h2 className="text-3xl md:text-5xl font-bold text-slate-800 mb-6 md:mb-8 leading-tight tracking-tighter uppercase">
-                            Sublimation <span className="text-uniform-secondary">Print Design</span>
+                        <h2 className="text-3xl md:text-6xl font-black text-navy-dark mb-8 leading-[0.9] tracking-tighter uppercase">
+                            Performance <br />
+                            <span className="text-uniform-secondary">Workwear Elite</span>
                         </h2>
-                        <div className="space-y-6 text-base md:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                            <p className="text-justify md:text-center lg:text-justify font-bold">
-                                Fast Colors Uniform delivers professional, high-quality workwear designed for comfort, durability, and sharp presentation. Using advanced sublimation printing, every garment features vibrant, fade-resistant colors and crisp detail that lasts through daily use and frequent washing. Fabrics are breathable, lightweight, and sweat-absorbent, ensuring all-day comfort in active environments. Precision stitching, modern fits, and neat finishes create a polished look for teams across industries.
+                        <div className="space-y-8 text-base md:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium">
+                            <p className="text-justify md:text-center lg:text-justify border-r-4 border-uniform-secondary pr-6 italic bg-white py-4 rounded-l-2xl shadow-sm">
+                                Engineered for the most demanding environments. Our sublimation workwear combines extreme durability with high-definition branding that never fades or wears off.
                             </p>
+
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
+                                {[
+                                    'Reinforced Stitching',
+                                    'Industrial Strength Fabric',
+                                    'Moisture Management',
+                                    'UV Ray Protection',
+                                    'Lightweight Comfort',
+                                    'Breathable Panel Design'
+                                ].map((feature, i) => (
+                                    <div key={i} className="flex items-center gap-3 group">
+                                        <div className="w-6 h-6 rounded-full bg-uniform-secondary/10 flex items-center justify-center group-hover:bg-uniform-secondary transition-colors duration-300">
+                                            <svg className="w-3.5 h-3.5 text-uniform-secondary group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>
+                                        </div>
+                                        <span className="text-sm font-bold text-navy-dark tracking-tight uppercase">{feature}</span>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </motion.div>
 

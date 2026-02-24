@@ -43,18 +43,18 @@ const Navigation = () => {
             <span className="sr-only">Fast Colour Sublimation</span>
           </button>
 
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex space-x-10">
             {navItems.map((item) => (
               <button
                 key={item}
                 onClick={() => handleNavClick(item)}
-                className={`font-medium transition-colors duration-300 relative group ${(location.pathname === '/gallery' && item === 'Gallery') || (location.pathname === '/' && item === 'Home' && !isScrolled) // Simple highlighting logic
+                className={`text-xs font-black uppercase tracking-widest transition-all duration-300 relative group py-2 ${(location.pathname === '/gallery' && item === 'Gallery') || (location.pathname === '/' && item === 'Home' && !isScrolled)
                   ? 'text-uniform-secondary'
-                  : 'text-black hover:text-gray-600'
+                  : 'text-navy-dark hover:text-uniform-secondary'
                   }`}
               >
                 {item}
-                <span className={`absolute bottom-0 left-0 h-0.5 bg-uniform-secondary transition-all duration-300 ${(location.pathname === '/gallery' && item === 'Gallery')
+                <span className={`absolute -bottom-1 left-0 h-1 bg-uniform-secondary transition-all duration-500 ${(location.pathname === '/gallery' && item === 'Gallery')
                   ? 'w-full'
                   : 'w-0 group-hover:w-full'
                   }`}></span>
@@ -81,8 +81,8 @@ const Navigation = () => {
               key={item}
               onClick={() => handleNavClick(item)}
               className={`block w-full text-left px-5 py-4 rounded-xl transition-all duration-300 font-bold uppercase tracking-widest text-sm ${(location.pathname === '/gallery' && item === 'Gallery') || (location.pathname === '/' && item === 'Home' && !isMobileMenuOpen)
-                  ? 'bg-uniform-secondary/10 text-uniform-secondary'
-                  : 'text-gray-700 hover:bg-slate-50 hover:text-uniform-secondary'
+                ? 'bg-uniform-secondary/10 text-uniform-secondary'
+                : 'text-gray-700 hover:bg-slate-50 hover:text-uniform-secondary'
                 }`}
             >
               <div className="flex items-center justify-between">

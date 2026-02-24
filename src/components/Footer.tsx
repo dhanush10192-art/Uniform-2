@@ -14,7 +14,7 @@ const Footer = () => {
   return (
     <footer className="bg-navy-dark text-gray-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-16">
           {/* Logo & Info */}
           <div className="text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start space-x-3 mb-8">
@@ -58,29 +58,6 @@ const Footer = () => {
                   </button>
                 </li>
               ))}
-            </ul>
-          </div>
-
-          {/* Services/Trust Tags (Implicitly using About/Gallery links) */}
-          <div className="text-center md:text-left">
-            <h3 className="text-white font-bold text-xl mb-8 uppercase tracking-widest">Our Promise</h3>
-            <ul className="space-y-4 text-sm font-medium text-gray-400">
-              <li className="flex items-center justify-center md:justify-start gap-3">
-                <span className="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
-                Permanent Color Fusion
-              </li>
-              <li className="flex items-center justify-center md:justify-start gap-3">
-                <span className="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
-                Breathable Performance Fabric
-              </li>
-              <li className="flex items-center justify-center md:justify-start gap-3">
-                <span className="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
-                Precision Custom Stitching
-              </li>
-              <li className="flex items-center justify-center md:justify-start gap-3">
-                <span className="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
-                Pan-India Delivery
-              </li>
             </ul>
           </div>
 
